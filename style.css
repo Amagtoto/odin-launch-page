@@ -1,3 +1,5 @@
+/*need to fix flex wraps*/
+
 body {
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 margin: 0;
@@ -10,21 +12,28 @@ text-align: center;
   flex-direction: column;
 }
 
+html {
+  background-color: #FFF;
+  scroll-behavior: smooth;
+}
+
 /* Section 1 NAVBAR */
 
 .navbar {
   display: flex;
   color: #F9FAF8;
-  background-color: #463058;
+  background-color: #6e458e;
   align-items: center;
 }
 
 .header-logo img {
-  width: 100px;
-  height: 100px;
+  display: flex;
+  height: 36px;
+  margin-left: 24px;
   margin-left: 50px;
-  padding-top: 15px;
-  flex: 0 0 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex: 1 1 200px;
 }
 
 .header-links {
@@ -36,23 +45,45 @@ text-align: center;
 .header-links > a {
   display: flex;
   align-items: center;
-  gap: 16px;
   color: #E5E7EB;
   font-size: 18px;
   padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 a {
   text-decoration: none;
 }
 
+.header-links a:hover {
+  background-color: #9f89b2;
+  cursor: pointer;
+}
+
 /* Section 1 HERO*/
+.hero-bg {
+  background-image: linear-gradient(
+    60deg,
+    rgba(70, 48, 88, 0.85),
+    rgba(129, 94, 119, 0.5)
+  ),
+  url(https://www.xmple.com/wallpaper/white-polka-dots-purple-spots-1920x1080-c2-ffffff-9370db-l2-89-240-a-150-f-3.svg);
+background-position: center;
+background-size: cover;
+}
+
 .hero {
   display: flex;
-  background-color: #463058;
-  align-items: center;
   justify-content: center;
-  padding: 90px;
+  align-items: center;
+  margin: 128px 72px 72px;
+  gap: 24px;
+  padding: 80px;
+  border: 8px solid #6e458e;
+  border-radius: 200px;
+  box-shadow: 2px 2px 20px 2px;
+  background: #463058;
 }
 
 .hero-text {
@@ -65,14 +96,14 @@ a {
 
 .hero-text h1 {
   font-size: 49px;
-  color: #F9FAF8;
+  color: #FFF;
   font-weight: bold;
+  text-shadow: 2px 2px black;
 }
 
 .hero-text p {
   color: #E5E7EB;
   font-size: 18px;
-  opacity: 0.7;
   margin-top: -10px;
 }
 
@@ -85,6 +116,15 @@ a {
   padding: 8px;
   width: 120px;
   text-decoration: none;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  box-shadow: 1px 1px 2px black;
+}
+
+.hero-text button:hover {
+  cursor: pointer;
+  background-color: #9f89b2;
+  box-shadow: 3px 3px #240507;
 }
 
 .hero-image {
@@ -94,7 +134,15 @@ a {
   object-fit: cover;
   margin-left: 50px;
   padding-top: 15px;
-  flex: 0 0 200px;
+}
+
+.hero-image img {
+  display: flex;
+  object-fit: cover;
+  max-width: 500px;
+  border: 12px solid #FFF;
+  border-radius: 50%;
+  box-shadow: 3px 3px 4px;
 }
 
 /*Section 2 CONTENT*/
@@ -104,13 +152,15 @@ a {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: #463058;
 }
 
 .content h1 {
   display: block;
-  font-size: 36px;
+  font-size: 48px;
   font-weight: bold;
-  color: #1F2937;
+  color: #FFF;
+  text-shadow: 2px 2px black;
 }
 
 .content-images {
@@ -134,41 +184,53 @@ a {
   display: flex;
   justify-content: center;
   margin-bottom: 100px;
+  font-size: 18px;
+  color: #FFF;
 }
 
 /*Section 3 QUOTE*/
 .quote {
+  flex: 0 0 0;
   display: flex;
   flex-direction: column;
-  background-color: #E5E7EB;
-  padding: 0 300px;
+  background-color: #6e458e;
+  padding: 0 400px;
   text-align: left;
+  align-items: center;
 }
 
 .quote p {
   font-size: 36px;
   font-style: italic;
-  color: #1F2937;
+  color: #FFF;
   font-weight: lighter;
-  margin-bottom: -10px;
+  margin-bottom: 10px;
 }
 
 .quote b {
-  flex: 0 0; 
-  text-align: right;
+  text-align: left;
   padding-bottom: 60px;
   padding-right: 20px;
+  color: #FFF;
 }
 
 /*Section 4 BOX SIGN UP*/
+.sign-up-bg {
+  background-color: #463058;
+}
+
+
 .box-sign-up {
   display: flex;
-  background-color: #815E77;
+  background-color: #6e458e;
   border-radius: 8px;
   align-items: center;
   justify-content: center;
   padding: 40px 80px;
-  margin: 100px 190px;
+  margin: 100px 50px;
+  border: 8px solid #FFF;
+  border-radius: 24px;
+  box-shadow: 2px 2px 3px black;
 }
 
 .sign-up-text {
@@ -188,11 +250,33 @@ a {
 }
 
 .sign-button button {
+  flex-shrink: 0;
   color: #F9FAF8;
   border-radius: 8px;
-  border: 1px solid #fff;
-  background-color: #815E77;
+  border: 2px solid #fff;
+  box-shadow: 1px 1px 2px black;
+  background-color: #6e458e;
   padding: 5px 25px;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 600;
+  margin: 24px auto;
 }
+
+.sign-button button:hover {
+  background-color: #b9acc4;
+  border-color: #463058;
+  cursor: pointer;
+}
+
+/*Footer*/
+.footer {
+  background-color: #b9acc4;
+}
+
+footer p {
+  padding: 24px;
+  text-align: center;
+  color: black;
+}
+
+
