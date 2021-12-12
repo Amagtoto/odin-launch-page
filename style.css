@@ -109,7 +109,7 @@ background-size: cover;
 
 .hero-text button {
   display: block;
-  background-color: #815E77;
+  background-color: #6e458e;
   font-weight: bold;
   color: #fff;
   border-radius: 8px;
@@ -263,9 +263,9 @@ background-size: cover;
 }
 
 .sign-button button:hover {
-  background-color: #b9acc4;
-  border-color: #463058;
   cursor: pointer;
+  background-color: #9f89b2;
+  box-shadow: 3px 3px #240507;
 }
 
 /*Footer*/
